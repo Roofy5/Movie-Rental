@@ -36,13 +36,12 @@ namespace Tests
         }
 
         [TestMethod]
-        [
+        [ExpectedException(typeof(ArgumentException))]
         public void Rental_ConstructorTest_WrongDate()
         {
             Rental rental = new Rental(new DateTime(2016,11,3), new DateTime(2016,11,2));
 
-            Assert.AreEqual(DateTime.Today, rental.RentDate);
-            Assert.AreEqual(DateTime.Today.AddDays((int)10), rental.ReturnDate);
+            Assert.Fail();
         }
 
     }

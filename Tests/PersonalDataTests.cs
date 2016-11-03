@@ -26,7 +26,7 @@ namespace Tests
             PersonalData data = new PersonalData("Klaudia", "Kaczka", new DateTime(1995, 4, 28));
 
             bool takieSame = false;
-            if (string.Compare(data.ToString(), "Imie: Klaudia, Nazwisko: Kaczka, Data Urodzenia: 1995-04-28") == 0)
+            if (string.Compare(data.ToString(), "Imie: Klaudia, Nazwisko: Kaczka, Data Urodzenia: " + new DateTime(1995, 4, 28).ToShortDateString(), System.Globalization.CultureInfo.InvariantCulture, System.Globalization.CompareOptions.None) == 0)
                 takieSame = true;
 
             Assert.AreEqual(true, takieSame);
