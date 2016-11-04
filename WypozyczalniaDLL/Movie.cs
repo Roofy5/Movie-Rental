@@ -11,6 +11,7 @@ namespace WypozyczalniaDLL
         private string name;
         private int points;
         private decimal price;
+        private List<Category> categories;    
 
         public decimal Price
         {
@@ -27,12 +28,17 @@ namespace WypozyczalniaDLL
             get { return name; }
             set { name = value; }
         }
+        public List<Category> Categories
+        {
+            get { return categories; }
+        }
 
         public Movie(string name, decimal price)
         {
             this.name = name;
             this.Price = price;
             this.points = 0;
+            this.categories = new List<Category>();
         }
     }
 }

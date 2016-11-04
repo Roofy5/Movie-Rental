@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace WypozyczalniaDLL
 {
-    public class CategoryChild : Category
+    public class CategoryNormal : Category
     {
-        private static CategoryChild instance;
-        public static CategoryChild Instance
+        private static CategoryNormal instance;
+        public static CategoryNormal Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new CategoryChild();
+                    instance = new CategoryNormal();
                 return instance;
-            } 
+            }
         }
 
-        private CategoryChild()
+        private CategoryNormal()
         {
             movies = new List<Movie>();
             points = 0;
@@ -27,7 +27,8 @@ namespace WypozyczalniaDLL
 
         public override string ReturnCategoryName()
         {
-            return "Child";
+            return "Normal";
         }
+
     }
 }

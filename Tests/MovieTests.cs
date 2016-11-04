@@ -44,5 +44,62 @@ namespace Tests
 
             Assert.AreEqual(0, film.Price);
         }
+        [TestMethod]
+        public void Movie_Categories()
+        {
+            Movie film = new Movie("Leon zawodowiec", (decimal)100.50);
+            Category normalne = CategoryNormal.Instance;
+
+            normalne.AddMovie(film);
+
+            Assert.AreEqual(true, film.Categories.Contains(CategoryNormal.Instance));
+            Assert.AreEqual(false, film.Categories.Contains(CategoryChild.Instance));
+        }
+        [TestMethod]
+        public void Movie_Categories2()
+        {
+            Movie film = new Movie("Leon zawodowiec", (decimal)100.50);
+            Category normalne = CategoryNormal.Instance;
+
+            normalne.AddMovie(film);
+            CategoryChild.Instance.AddMovie(film);
+
+            Assert.AreEqual(true, film.Categories.Contains(CategoryNormal.Instance));
+            Assert.AreEqual(true, film.Categories.Contains(CategoryChild.Instance));
+
+            Category dzieciece = CategoryChild.Instance;
+            dzieciece.RemoveMovie(film);
+
+            Assert.AreEqual(true, film.Categories.Contains(CategoryNormal.Instance));
+            Assert.AreEqual(false, film.Categories.Contains(CategoryChild.Instance));
+        }
+        [TestMethod]
+        public void Movie_Categories_Names()
+        {
+            Movie film = new Movie("Leon zawodowiec", (decimal)100.50);
+            Category normalne = CategoryNormal.Instance;
+
+            normalne.AddMovie(film);
+            CategoryChild.Instance.AddMovie(film);
+
+            string categories = "";
+            foreach (Category category in film.Categories)
+            {
+                categories += category.ReturnCategoryName();
+            }
+
+            StringAssert.Equals("NormalChild", categories);
+
+            Category dzieciece = CategoryChild.Instance;
+            dzieciece.RemoveMovie(film);
+
+            categories = "";
+            foreach (Category category in film.Categories)
+            {
+                categories += category.ReturnCategoryName();
+            }
+
+            StringAssert.Equals("Normal", categories);
+        }
     }
 }

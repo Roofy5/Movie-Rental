@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category\CategoryChild.cs" />
+    <Compile Include="Category\CategoryNew.cs" />
+    <Compile Include="Category\CategoryNormal.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Category\ICategory.cs" />
+    <Compile Include="Category\Category.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="PersonalData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
