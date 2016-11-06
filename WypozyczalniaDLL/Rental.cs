@@ -48,12 +48,26 @@ namespace WypozyczalniaDLL
 
         public decimal CalculatePrice()
         {
-            throw new NotImplementedException();
+            decimal price = 0;
+            foreach (Movie movie in moviesList)
+            {
+                // TODO
+                // Pytanie jak liczyc dni - czy uwzgledniac date zwrotu jako dzien wypozyczony?
+                price += movie.Price * (returnDate.Date - rentDate.Date).Days;
+            }
+            return price;
         }
 
         public int CalculatePoints()
         {
-            throw new NotImplementedException();
+            int points = 0;
+            foreach (Movie movie in moviesList)
+            {
+                // TODO
+                // Pytanie jak liczyc dni - czy uwzgledniac date zwrotu jako dzien wypozyczony?
+                points += movie.Points * (returnDate.Date - rentDate.Date).Days;
+            }
+            return points;
         }
     }
 }

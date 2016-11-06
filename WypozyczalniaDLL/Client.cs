@@ -32,5 +32,14 @@ namespace WypozyczalniaDLL
             points = 0;
             rentalList = new List<Rental>();
         }
+
+        public void CalculatePoint()
+        {
+            points = 0;
+            foreach (Rental rental in rentalList)
+            {
+                points += rental.CalculatePoints();
+            }
+        }
     }
 }
