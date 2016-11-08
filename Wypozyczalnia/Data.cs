@@ -24,6 +24,10 @@ namespace Wypozyczalnia
                 CategoryNormal.Instance,
                 CategoryNew.Instance
             };
+
+            CategoryChild.Instance.PointsPerDay = 1;
+            CategoryNormal.Instance.PointsPerDay = 2;
+            CategoryNew.Instance.PointsPerDay = 3;
         }
     }
 }

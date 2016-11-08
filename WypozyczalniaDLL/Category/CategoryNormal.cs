@@ -30,5 +30,9 @@ namespace WypozyczalniaDLL
             return "Normal";
         }
 
+        public override string ToString()
+        {
+            return "Normalne";
+        }
     }
 }

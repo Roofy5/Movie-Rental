@@ -23,5 +23,11 @@ namespace Wypozyczalnia
             klientPanel.ShowDialog();
             //this.Hide();
         }
+
+        private void btnFilmy_Click(object sender, EventArgs e)
+        {
+            MoviesMenu form = new MoviesMenu();
+            form.ShowDialog();
+        }
     }
 }

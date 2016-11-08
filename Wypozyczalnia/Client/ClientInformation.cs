@@ -29,6 +29,19 @@ namespace Wypozyczalnia
             dateTimePicker1.Value = selectedClient.PersonalData.BirthDate;
             txtPoints.Text = selectedClient.Points.ToString();
 
+            RefreshRentalList();
+        }
+
+        private void btnAddRental_Click(object sender, EventArgs e)
+        {
+            NewRental form = new NewRental(selectedClient);
+            form.ShowDialog();
+            RefreshRentalList();
+        }
+
+        private void RefreshRentalList()
+        {
+            dataGridView1.Rows.Clear();
             foreach (Rental rental in selectedClient.RentalList)
             {
                 DateTime rentDate = rental.RentDate;
@@ -37,14 +50,8 @@ namespace Wypozyczalnia
                 decimal price = rental.CalculatePrice();
                 int points = rental.CalculatePoints();
 
-                dataGridView1.Rows.Add(rentDate, returnDate, numberOfMovies, points, price);
+                dataGridView1.Rows.Add(rentDate.ToShortDateString(), returnDate.ToShortDateString(), numberOfMovies, points, price);
             }
-        }
-
-        private void btnAddRental_Click(object sender, EventArgs e)
-        {
-            NewRental form = new NewRental(selectedClient);
-            form.ShowDialog();
         }
     }
 }

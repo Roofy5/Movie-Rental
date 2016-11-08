@@ -39,17 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Movies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnAddRental = new System.Windows.Forms.Button();
             this.btnRemoveRental = new System.Windows.Forms.Button();
             this.btnRentalInformations = new System.Windows.Forms.Button();
+            this.RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Movies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -169,36 +169,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(657, 272);
             this.dataGridView1.TabIndex = 25;
             // 
-            // RentDate
-            // 
-            this.RentDate.HeaderText = "Wypożyczenie";
-            this.RentDate.Name = "RentDate";
-            this.RentDate.ReadOnly = true;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.HeaderText = "Zwrot";
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.ReadOnly = true;
-            // 
-            // Movies
-            // 
-            this.Movies.HeaderText = "Liczba filmów";
-            this.Movies.Name = "Movies";
-            this.Movies.ReadOnly = true;
-            // 
-            // Points
-            // 
-            this.Points.HeaderText = "Punkty";
-            this.Points.Name = "Points";
-            this.Points.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Cena";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -270,6 +240,36 @@
             this.btnRentalInformations.Text = "Szczegóły";
             this.btnRentalInformations.UseVisualStyleBackColor = true;
             // 
+            // RentDate
+            // 
+            this.RentDate.HeaderText = "Wypożyczenie";
+            this.RentDate.Name = "RentDate";
+            this.RentDate.ReadOnly = true;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.HeaderText = "Zwrot";
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
+            // 
+            // Movies
+            // 
+            this.Movies.HeaderText = "Liczba filmów";
+            this.Movies.Name = "Movies";
+            this.Movies.ReadOnly = true;
+            // 
+            // Points
+            // 
+            this.Points.HeaderText = "Punkty";
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Cena";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // ClientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,16 +304,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RentDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Movies;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnRentalInformations;
         private System.Windows.Forms.Button btnRemoveRental;
         private System.Windows.Forms.Button btnAddRental;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RentDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Movies;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

@@ -29,5 +29,10 @@ namespace WypozyczalniaDLL
         {
             return "Child";
         }
+
+        public override string ToString()
+        {
+            return "Dziecięce";
+        }
     }
 }

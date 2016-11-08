@@ -75,6 +75,18 @@
       <DependentUpon>NewRental.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="Filmy\MovieAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filmy\MovieAdd.Designer.cs">
+      <DependentUpon>MovieAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filmy\MoviesMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filmy\MoviesMenu.Designer.cs">
+      <DependentUpon>MoviesMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client\Rental\NewRental.resx">
       <DependentUpon>NewRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filmy\MovieAdd.resx">
+      <DependentUpon>MovieAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filmy\MoviesMenu.resx">
+      <DependentUpon>MoviesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

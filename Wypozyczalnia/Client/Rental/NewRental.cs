@@ -39,6 +39,9 @@ namespace Wypozyczalnia
         private void DateChange(object sender, EventArgs e)
         {
             txtDays.Text = (dateTimePickerReturnDate.Value - dateTimePickerRentDate.Value).Days.ToString();
+            rental.RentDate = dateTimePickerRentDate.Value;
+            rental.ReturnDate = dateTimePickerReturnDate.Value;
+            CalculatePointsAndPrice();
         }
 
         private void CalculatePointsAndPrice()
@@ -62,6 +65,18 @@ namespace Wypozyczalnia
             }
             txtMovies.Text = listMovies.SelectedItems.Count.ToString();
             CalculatePointsAndPrice();
+        }
+
+        private void btnAddRental_Click(object sender, EventArgs e)
+        {
+            if (rental.ReturnDate < rental.RentDate)
+            {
+                txtDays.Text = "Wrong value!";
+                return;
+            }
+
+            selectedClient.RentalList.Add(rental);
+            this.Close();
         }
     }
 }

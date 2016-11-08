@@ -65,6 +65,7 @@
             this.btnFilmy.TabIndex = 1;
             this.btnFilmy.Text = "Filmy";
             this.btnFilmy.UseVisualStyleBackColor = true;
+            this.btnFilmy.Click += new System.EventHandler(this.btnFilmy_Click);
             // 
             // btnKategorie
             // 

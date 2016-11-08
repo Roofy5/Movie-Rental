@@ -29,5 +29,10 @@ namespace WypozyczalniaDLL
         {
             return "New";
         }
+
+        public override string ToString()
+        {
+            return "Nowe";
+        }
     }
 }

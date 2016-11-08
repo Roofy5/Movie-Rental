@@ -47,6 +47,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtMovies = new System.Windows.Forms.TextBox();
+            this.btnAddRental = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtImie
@@ -231,11 +232,23 @@
             this.txtMovies.Size = new System.Drawing.Size(85, 31);
             this.txtMovies.TabIndex = 23;
             // 
+            // btnAddRental
+            // 
+            this.btnAddRental.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddRental.Location = new System.Drawing.Point(409, 260);
+            this.btnAddRental.Name = "btnAddRental";
+            this.btnAddRental.Size = new System.Drawing.Size(250, 57);
+            this.btnAddRental.TabIndex = 50;
+            this.btnAddRental.Text = "Zatwierdź";
+            this.btnAddRental.UseVisualStyleBackColor = true;
+            this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
+            // 
             // NewRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.btnAddRental);
             this.Controls.Add(this.listMovies);
             this.Controls.Add(this.dateTimePickerReturnDate);
             this.Controls.Add(this.dateTimePickerRentDate);
@@ -283,5 +296,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtMovies;
+        private System.Windows.Forms.Button btnAddRental;
     }
 }
