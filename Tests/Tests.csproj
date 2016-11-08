@@ -58,6 +58,7 @@
     <Compile Include="MovieTests.cs" />
     <Compile Include="CategoryTests.cs" />
     <Compile Include="ClientTests.cs" />
+    <Compile Include="PrintOutTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WypozyczalniaDLL\WypozyczalniaDLL.csproj">
