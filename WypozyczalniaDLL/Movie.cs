@@ -40,5 +40,10 @@ namespace WypozyczalniaDLL
             this.points = 0;
             this.categories = new List<Category>();
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0}", name);
+        }
     }
 }

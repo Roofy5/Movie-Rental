@@ -56,5 +56,15 @@ namespace Wypozyczalnia
                 listBox1.Items.Add(client);
             }
         }
+
+        private void btnClientInfo_Click(object sender, EventArgs e)
+        {
+            Client client = listBox1.SelectedItem as Client;
+            if (client != null)
+            {
+                ClientInformation form = new ClientInformation(client);
+                form.ShowDialog();
+            }
+        }
     }
 }

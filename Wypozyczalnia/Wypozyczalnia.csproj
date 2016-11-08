@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ClientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ClientInformation.Designer.cs">
+      <DependentUpon>ClientInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientModify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     <Compile Include="Client\Client_panel.Designer.cs">
       <DependentUpon>Client_panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\Rental\NewRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Rental\NewRental.Designer.cs">
+      <DependentUpon>NewRental.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -71,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client\ClientInformation.resx">
+      <DependentUpon>ClientInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientModify.resx">
       <DependentUpon>ClientModify.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client\Client_panel.resx">
       <DependentUpon>Client_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Rental\NewRental.resx">
+      <DependentUpon>NewRental.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

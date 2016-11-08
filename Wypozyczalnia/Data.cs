@@ -12,10 +12,18 @@ namespace Wypozyczalnia
     {
         public static List<Client> Clients;
         public static List<Movie> Movies;
+        public static List<Category> Categories;
 
-        static Data() {
+        static Data()
+        {
             Clients = new List<Client>();
             Movies = new List<Movie>();
+            Categories = new List<Category>()
+            {
+                CategoryChild.Instance,
+                CategoryNormal.Instance,
+                CategoryNew.Instance
+            };
         }
     }
 }

@@ -81,7 +81,7 @@
             this.btnModifyClient.Name = "btnModifyClient";
             this.btnModifyClient.Size = new System.Drawing.Size(184, 97);
             this.btnModifyClient.TabIndex = 2;
-            this.btnModifyClient.Text = "Modyfikuj klienta";
+            this.btnModifyClient.Text = "Modyfikuj dane osobowe";
             this.btnModifyClient.UseVisualStyleBackColor = true;
             this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
@@ -94,7 +94,7 @@
             this.btnClientInfo.TabIndex = 2;
             this.btnClientInfo.Text = "Informacje o kliencie";
             this.btnClientInfo.UseVisualStyleBackColor = true;
-            this.btnClientInfo.Click += new System.EventHandler(this.btnModifyClient_Click);
+            this.btnClientInfo.Click += new System.EventHandler(this.btnClientInfo_Click);
             // 
             // ClientPanel
             // 
