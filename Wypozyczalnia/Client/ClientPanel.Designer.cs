@@ -74,6 +74,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.button3.Location = new System.Drawing.Point(32, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(184, 97);
