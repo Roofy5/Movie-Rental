@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnDeleteClient = new System.Windows.Forms.Button();
+            this.btnModifyClient = new System.Windows.Forms.Button();
+            this.btnClientInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,62 +48,63 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(411, 118);
+            this.listBox1.Location = new System.Drawing.Point(283, 90);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(207, 303);
+            this.listBox1.Size = new System.Drawing.Size(366, 407);
             this.listBox1.TabIndex = 1;
             // 
-            // button1
+            // btnAddClient
             // 
-            this.button1.Location = new System.Drawing.Point(32, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 97);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Dodaj klienta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddClient.Location = new System.Drawing.Point(32, 90);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(184, 97);
+            this.btnAddClient.TabIndex = 2;
+            this.btnAddClient.Text = "Dodaj klienta";
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnDeleteClient
             // 
-            this.button2.Location = new System.Drawing.Point(411, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Odswiez";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDeleteClient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDeleteClient.Location = new System.Drawing.Point(32, 399);
+            this.btnDeleteClient.Name = "btnDeleteClient";
+            this.btnDeleteClient.Size = new System.Drawing.Size(184, 97);
+            this.btnDeleteClient.TabIndex = 2;
+            this.btnDeleteClient.Text = "Usuń klienta";
+            this.btnDeleteClient.UseVisualStyleBackColor = true;
+            this.btnDeleteClient.Click += new System.EventHandler(this.btnUsunKlienta_Click);
             // 
-            // button3
+            // btnModifyClient
             // 
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(32, 193);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 97);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Modyfikuj klienta";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.btnModifyClient.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModifyClient.Location = new System.Drawing.Point(32, 296);
+            this.btnModifyClient.Name = "btnModifyClient";
+            this.btnModifyClient.Size = new System.Drawing.Size(184, 97);
+            this.btnModifyClient.TabIndex = 2;
+            this.btnModifyClient.Text = "Modyfikuj klienta";
+            this.btnModifyClient.UseVisualStyleBackColor = true;
+            this.btnModifyClient.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
-            // button4
+            // btnClientInfo
             // 
-            this.button4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button4.Location = new System.Drawing.Point(32, 296);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 97);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Modyfikuj klienta";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button1_Click);
+            this.btnClientInfo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnClientInfo.Location = new System.Drawing.Point(32, 193);
+            this.btnClientInfo.Name = "btnClientInfo";
+            this.btnClientInfo.Size = new System.Drawing.Size(184, 97);
+            this.btnClientInfo.TabIndex = 2;
+            this.btnClientInfo.Text = "Informacje o kliencie";
+            this.btnClientInfo.UseVisualStyleBackColor = true;
+            this.btnClientInfo.Click += new System.EventHandler(this.btnModifyClient_Click);
             // 
             // ClientPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 526);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClientInfo);
+            this.Controls.Add(this.btnModifyClient);
+            this.Controls.Add(this.btnDeleteClient);
+            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Name = "ClientPanel";
@@ -117,9 +118,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnDeleteClient;
+        private System.Windows.Forms.Button btnModifyClient;
+        private System.Windows.Forms.Button btnClientInfo;
     }
 }

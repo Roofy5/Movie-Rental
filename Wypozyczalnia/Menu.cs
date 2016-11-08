@@ -20,8 +20,8 @@ namespace Wypozyczalnia
         private void btnKlienci_Click(object sender, EventArgs e)
         {
             ClientPanel klientPanel = new ClientPanel();
-            klientPanel.Show();
-            this.Hide();
+            klientPanel.ShowDialog();
+            //this.Hide();
         }
     }
 }

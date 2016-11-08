@@ -17,24 +17,44 @@ namespace Wypozyczalnia
         public ClientPanel()
         {
             InitializeComponent();
+            RefreshClientList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Client_panel dodajKlienta = new Client_panel();
-            dodajKlienta.Show();
-            //this.Hide();
+            dodajKlienta.ShowDialog();
+            RefreshClientList();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnUsunKlienta_Click(object sender, EventArgs e)
+        {
+            Client client = listBox1.SelectedItem as Client;
+            if (client != null)
+                Data.Clients.Remove(client);
+
+            RefreshClientList();
+        }
+
+        private void btnModifyClient_Click(object sender, EventArgs e)
+        {
+            Client client = listBox1.SelectedItem as Client;
+            if (client != null)
+            {
+                ClientModify form = new ClientModify(client);
+                form.ShowDialog();
+            }
+
+            RefreshClientList();
+        }
+
+        private void RefreshClientList()
         {
             listBox1.Items.Clear();
             foreach (Client client in Data.Clients)
             {
                 listBox1.Items.Add(client);
             }
-            
-            //listBox1.DataSource = Data.Clients;
         }
     }
 }

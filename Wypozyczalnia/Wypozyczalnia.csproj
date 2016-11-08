@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ClientModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ClientModify.Designer.cs">
+      <DependentUpon>ClientModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client\ClientModify.resx">
+      <DependentUpon>ClientModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientPanel.resx">
       <DependentUpon>ClientPanel.cs</DependentUpon>
     </EmbeddedResource>
