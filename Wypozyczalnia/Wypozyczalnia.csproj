@@ -44,14 +44,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Client\ClientPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Client\ClientPanel.Designer.cs">
+      <DependentUpon>ClientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Client_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Client_panel.Designer.cs">
+      <DependentUpon>Client_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client\ClientPanel.resx">
+      <DependentUpon>ClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Client_panel.resx">
+      <DependentUpon>Client_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,6 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WypozyczalniaDLL\WypozyczalniaDLL.csproj">
+      <Project>{7a6af89e-2d81-48f2-8cd2-236712fcb803}</Project>
+      <Name>WypozyczalniaDLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

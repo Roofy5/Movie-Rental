@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Wypozyczalnia
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
+        }
+
+        private void btnKlienci_Click(object sender, EventArgs e)
+        {
+            ClientPanel klientPanel = new ClientPanel();
+            klientPanel.Show();
+            this.Hide();
         }
     }
 }

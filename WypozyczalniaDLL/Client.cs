@@ -41,5 +41,10 @@ namespace WypozyczalniaDLL
                 points += rental.CalculatePoints();
             }
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", personalData.Name, personalData.Surname);
+        }
     }
 }
