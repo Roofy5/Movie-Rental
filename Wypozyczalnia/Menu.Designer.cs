@@ -32,7 +32,6 @@
             this.btnKlienci = new System.Windows.Forms.Button();
             this.btnFilmy = new System.Windows.Forms.Button();
             this.btnKategorie = new System.Windows.Forms.Button();
-            this.btnWydruk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,29 +69,19 @@
             // btnKategorie
             // 
             this.btnKategorie.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnKategorie.Location = new System.Drawing.Point(99, 327);
+            this.btnKategorie.Location = new System.Drawing.Point(99, 297);
             this.btnKategorie.Name = "btnKategorie";
             this.btnKategorie.Size = new System.Drawing.Size(250, 100);
             this.btnKategorie.TabIndex = 1;
             this.btnKategorie.Text = "Kategorie";
             this.btnKategorie.UseVisualStyleBackColor = true;
-            // 
-            // btnWydruk
-            // 
-            this.btnWydruk.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWydruk.Location = new System.Drawing.Point(397, 327);
-            this.btnWydruk.Name = "btnWydruk";
-            this.btnWydruk.Size = new System.Drawing.Size(250, 100);
-            this.btnWydruk.TabIndex = 1;
-            this.btnWydruk.Text = "Wydruk";
-            this.btnWydruk.UseVisualStyleBackColor = true;
+            this.btnKategorie.Click += new System.EventHandler(this.btnKategorie_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnWydruk);
             this.Controls.Add(this.btnKategorie);
             this.Controls.Add(this.btnFilmy);
             this.Controls.Add(this.btnKlienci);
@@ -112,7 +101,6 @@
         private System.Windows.Forms.Button btnKlienci;
         private System.Windows.Forms.Button btnFilmy;
         private System.Windows.Forms.Button btnKategorie;
-        private System.Windows.Forms.Button btnWydruk;
     }
 }
 

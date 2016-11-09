@@ -13,6 +13,7 @@ namespace Wypozyczalnia
         public static List<Client> Clients;
         public static List<Movie> Movies;
         public static List<Category> Categories;
+        public static List<IPrintOut> PrintOutTypes;
 
         static Data()
         {
@@ -28,6 +29,11 @@ namespace Wypozyczalnia
             CategoryChild.Instance.PointsPerDay = 1;
             CategoryNormal.Instance.PointsPerDay = 2;
             CategoryNew.Instance.PointsPerDay = 3;
+
+            PrintOutTypes = new List<IPrintOut>()
+            {
+                new PrintToString()
+            };
         }
     }
 }

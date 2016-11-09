@@ -24,11 +24,7 @@ namespace Wypozyczalnia
 
         private void ClientInformation_Load(object sender, EventArgs e)
         {
-            txtImie.Text = selectedClient.PersonalData.Name;
-            txtNazwisko.Text = selectedClient.PersonalData.Surname;
-            dateTimePicker1.Value = selectedClient.PersonalData.BirthDate;
-            txtPoints.Text = selectedClient.Points.ToString();
-
+            RefreshClientDetails();
             RefreshRentalList();
         }
 
@@ -37,6 +33,61 @@ namespace Wypozyczalnia
             NewRental form = new NewRental(selectedClient);
             form.ShowDialog();
             RefreshRentalList();
+        }
+
+        private void btnRentalInformations_Click(object sender, EventArgs e)
+        {
+            Rental selectedRental;
+            try
+            {
+                selectedRental = dataGridView1.SelectedRows[0].Cells["Rental"].Value as Rental;
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            if (selectedRental != null)
+            {
+                RentalInformations form = new RentalInformations(selectedRental);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnRemoveRental_Click(object sender, EventArgs e)
+        {
+            Rental selectedRental;
+            try
+            {
+                selectedRental = dataGridView1.SelectedRows[0].Cells["Rental"].Value as Rental;
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            if (selectedRental != null)
+            {
+                selectedClient.RentalList.Remove(selectedRental);
+            }
+            RefreshRentalList();
+            RefreshClientDetails();
+        }
+
+        private void btnPrintOut_Click(object sender, EventArgs e)
+        {
+            Rental selectedRental;
+            try
+            {
+                selectedRental = dataGridView1.SelectedRows[0].Cells["Rental"].Value as Rental;
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            if (selectedRental != null)
+            {
+                PrintOutMenu form = new PrintOutMenu(selectedRental);
+                form.ShowDialog();
+            }
         }
 
         private void RefreshRentalList()
@@ -50,8 +101,24 @@ namespace Wypozyczalnia
                 decimal price = rental.CalculatePrice();
                 int points = rental.CalculatePoints();
 
-                dataGridView1.Rows.Add(rentDate.ToShortDateString(), returnDate.ToShortDateString(), numberOfMovies, points, price);
+                dataGridView1.Rows.Add(rentDate.ToShortDateString(), returnDate.ToShortDateString(), numberOfMovies, points, price, rental);
             }
         }
+
+        private void RefreshClientDetails()
+        {
+            txtImie.Text = selectedClient.PersonalData.Name;
+            txtNazwisko.Text = selectedClient.PersonalData.Surname;
+            dateTimePicker1.Value = selectedClient.PersonalData.BirthDate;
+            selectedClient.CalculatePoint();
+            txtPoints.Text = selectedClient.Points.ToString();
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            RefreshClientDetails();
+            RefreshRentalList();
+        }
+ 
     }
 }

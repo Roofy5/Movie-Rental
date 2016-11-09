@@ -44,12 +44,14 @@
             this.Movies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rental = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnRentalInformations = new System.Windows.Forms.Button();
             this.btnRemoveRental = new System.Windows.Forms.Button();
             this.btnAddRental = new System.Windows.Forms.Button();
+            this.btnPrintOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -162,10 +164,12 @@
             this.ReturnDate,
             this.Movies,
             this.Points,
-            this.Price});
+            this.Price,
+            this.rental});
             this.dataGridView1.Location = new System.Drawing.Point(6, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(657, 272);
             this.dataGridView1.TabIndex = 25;
             // 
@@ -199,6 +203,13 @@
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
             // 
+            // rental
+            // 
+            this.rental.HeaderText = "Rental";
+            this.rental.Name = "rental";
+            this.rental.ReadOnly = true;
+            this.rental.Visible = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -208,6 +219,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(760, 446);
             this.tabControl1.TabIndex = 26;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
@@ -230,6 +242,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnRentalInformations);
+            this.tabPage2.Controls.Add(this.btnPrintOut);
             this.tabPage2.Controls.Add(this.btnRemoveRental);
             this.tabPage2.Controls.Add(this.btnAddRental);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -250,6 +263,7 @@
             this.btnRentalInformations.TabIndex = 26;
             this.btnRentalInformations.Text = "Szczegóły";
             this.btnRentalInformations.UseVisualStyleBackColor = true;
+            this.btnRentalInformations.Click += new System.EventHandler(this.btnRentalInformations_Click);
             // 
             // btnRemoveRental
             // 
@@ -259,6 +273,7 @@
             this.btnRemoveRental.TabIndex = 26;
             this.btnRemoveRental.Text = "Usuń wypożyczenie";
             this.btnRemoveRental.UseVisualStyleBackColor = true;
+            this.btnRemoveRental.Click += new System.EventHandler(this.btnRemoveRental_Click);
             // 
             // btnAddRental
             // 
@@ -269,6 +284,16 @@
             this.btnAddRental.Text = "Nowe wypożyczenie";
             this.btnAddRental.UseVisualStyleBackColor = true;
             this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
+            // 
+            // btnPrintOut
+            // 
+            this.btnPrintOut.Location = new System.Drawing.Point(418, 319);
+            this.btnPrintOut.Name = "btnPrintOut";
+            this.btnPrintOut.Size = new System.Drawing.Size(130, 49);
+            this.btnPrintOut.TabIndex = 26;
+            this.btnPrintOut.Text = "Drukuj";
+            this.btnPrintOut.UseVisualStyleBackColor = true;
+            this.btnPrintOut.Click += new System.EventHandler(this.btnPrintOut_Click);
             // 
             // ClientInformation
             // 
@@ -315,5 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Movies;
         private System.Windows.Forms.DataGridViewTextBoxColumn Points;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rental;
+        private System.Windows.Forms.Button btnPrintOut;
     }
 }

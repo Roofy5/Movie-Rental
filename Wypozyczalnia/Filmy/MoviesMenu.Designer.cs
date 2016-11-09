@@ -46,6 +46,7 @@
             this.btnMovieInfo.TabIndex = 5;
             this.btnMovieInfo.Text = "Informacje o filmie";
             this.btnMovieInfo.UseVisualStyleBackColor = true;
+            this.btnMovieInfo.Click += new System.EventHandler(this.btnMovieInfo_Click);
             // 
             // btnModifyMovie
             // 
@@ -68,6 +69,7 @@
             this.btnDeleteMovie.TabIndex = 7;
             this.btnDeleteMovie.Text = "Usuń film";
             this.btnDeleteMovie.UseVisualStyleBackColor = true;
+            this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteMovie_Click);
             // 
             // btnAddMovie
             // 

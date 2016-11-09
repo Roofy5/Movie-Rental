@@ -29,5 +29,11 @@ namespace Wypozyczalnia
             MoviesMenu form = new MoviesMenu();
             form.ShowDialog();
         }
+
+        private void btnKategorie_Click(object sender, EventArgs e)
+        {
+            CategoriesMenu form = new CategoriesMenu();
+            form.ShowDialog();
+        }
     }
 }

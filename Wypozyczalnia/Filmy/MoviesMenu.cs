@@ -36,5 +36,42 @@ namespace Wypozyczalnia
             form.ShowDialog();
             RefreshList();
         }
+
+        private void btnMovieInfo_Click(object sender, EventArgs e)
+        {
+            Movie movie = SelectedMovie();
+            
+            if (movie == null)
+                return;
+
+            MovieInformation form = new MovieInformation(movie);
+            form.ShowDialog();
+        }
+
+        private void btnDeleteMovie_Click(object sender, EventArgs e)
+        {
+            Movie movie = SelectedMovie();
+            if (movie == null)
+                return;
+
+            Data.Movies.Remove(movie);
+            RefreshList();
+        }
+
+        private Movie SelectedMovie()
+        {
+            Movie movie;
+            try
+            {
+                movie = listBox1.SelectedItem as Movie;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            return movie;
+        }
+
     }
 }

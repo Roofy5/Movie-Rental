@@ -74,6 +74,12 @@
     <Compile Include="Client\Rental\NewRental.Designer.cs">
       <DependentUpon>NewRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\Rental\RentalInformations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Rental\RentalInformations.Designer.cs">
+      <DependentUpon>RentalInformations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="Filmy\MovieAdd.cs">
       <SubType>Form</SubType>
@@ -81,11 +87,23 @@
     <Compile Include="Filmy\MovieAdd.Designer.cs">
       <DependentUpon>MovieAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filmy\MovieInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filmy\MovieInformation.Designer.cs">
+      <DependentUpon>MovieInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Filmy\MoviesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Filmy\MoviesMenu.Designer.cs">
       <DependentUpon>MoviesMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorie\CategoriesMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorie\CategoriesMenu.Designer.cs">
+      <DependentUpon>CategoriesMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -95,6 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wydruk\PrintOutMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wydruk\PrintOutMenu.Designer.cs">
+      <DependentUpon>PrintOutMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client\ClientInformation.resx">
       <DependentUpon>ClientInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,11 +134,20 @@
     <EmbeddedResource Include="Client\Rental\NewRental.resx">
       <DependentUpon>NewRental.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Client\Rental\RentalInformations.resx">
+      <DependentUpon>RentalInformations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Filmy\MovieAdd.resx">
       <DependentUpon>MovieAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Filmy\MovieInformation.resx">
+      <DependentUpon>MovieInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Filmy\MoviesMenu.resx">
       <DependentUpon>MoviesMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategorie\CategoriesMenu.resx">
+      <DependentUpon>CategoriesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -128,6 +161,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Wydruk\PrintOutMenu.resx">
+      <DependentUpon>PrintOutMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,7 +10,6 @@ namespace WypozyczalniaDLL
     {
         private int rentDays;
 
-
         public string PrintOut(Rental rental, PrintConfiguration configuration = PrintConfiguration.ALL)
         {
             rentDays = (rental.ReturnDate - rental.RentDate).Days;
@@ -30,6 +29,11 @@ namespace WypozyczalniaDLL
             }
 
             return PrintFooter(body);                
+        }
+
+        public override string ToString()
+        {
+            return "Druk do stringa";
         }
 
         private string PrintHeader(Rental rental)
