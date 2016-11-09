@@ -32,6 +32,9 @@ namespace Wypozyczalnia
             listCategories.Items.Clear();
             foreach (Category cat in Data.Categories)
                 listCategories.Items.Add(cat);
+
+            foreach (Category cat in selectedMovie.Categories)
+                listCategories.SetSelected(listCategories.Items.IndexOf(cat), true);
         }
     }
 }

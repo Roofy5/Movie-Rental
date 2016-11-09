@@ -93,6 +93,12 @@
     <Compile Include="Filmy\MovieInformation.Designer.cs">
       <DependentUpon>MovieInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filmy\MovieModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filmy\MovieModification.Designer.cs">
+      <DependentUpon>MovieModification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Filmy\MoviesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Filmy\MovieInformation.resx">
       <DependentUpon>MovieInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filmy\MovieModification.resx">
+      <DependentUpon>MovieModification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filmy\MoviesMenu.resx">
       <DependentUpon>MoviesMenu.cs</DependentUpon>

@@ -54,7 +54,22 @@ namespace Wypozyczalnia
             if (movie == null)
                 return;
 
+            foreach (Category cat in Data.Categories)
+                cat.RemoveMovie(movie);
+
             Data.Movies.Remove(movie);
+            RefreshList();
+        }
+
+        private void btnModifyMovie_Click(object sender, EventArgs e)
+        {
+            Movie movie = SelectedMovie();
+            if (movie == null)
+                return;
+
+            MovieModification form = new MovieModification(ref movie);
+            form.ShowDialog();
+
             RefreshList();
         }
 

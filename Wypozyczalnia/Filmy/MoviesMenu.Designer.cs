@@ -58,6 +58,7 @@
             this.btnModifyMovie.TabIndex = 6;
             this.btnModifyMovie.Text = "Modyfikuj film";
             this.btnModifyMovie.UseVisualStyleBackColor = true;
+            this.btnModifyMovie.Click += new System.EventHandler(this.btnModifyMovie_Click);
             // 
             // btnDeleteMovie
             // 
