@@ -38,7 +38,8 @@
             // 
             // btnMovieInfo
             // 
-            this.btnMovieInfo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMovieInfo.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMovieInfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMovieInfo.Location = new System.Drawing.Point(22, 191);
             this.btnMovieInfo.Name = "btnMovieInfo";
             this.btnMovieInfo.Size = new System.Drawing.Size(184, 97);
@@ -48,7 +49,8 @@
             // 
             // btnModifyMovie
             // 
-            this.btnModifyMovie.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModifyMovie.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModifyMovie.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnModifyMovie.Location = new System.Drawing.Point(22, 294);
             this.btnModifyMovie.Name = "btnModifyMovie";
             this.btnModifyMovie.Size = new System.Drawing.Size(184, 97);
@@ -58,7 +60,8 @@
             // 
             // btnDeleteMovie
             // 
-            this.btnDeleteMovie.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDeleteMovie.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeleteMovie.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDeleteMovie.Location = new System.Drawing.Point(22, 397);
             this.btnDeleteMovie.Name = "btnDeleteMovie";
             this.btnDeleteMovie.Size = new System.Drawing.Size(184, 97);
@@ -68,6 +71,8 @@
             // 
             // btnAddMovie
             // 
+            this.btnAddMovie.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddMovie.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddMovie.Location = new System.Drawing.Point(22, 88);
             this.btnAddMovie.Name = "btnAddMovie";
             this.btnAddMovie.Size = new System.Drawing.Size(184, 97);
@@ -79,19 +84,20 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(273, 88);
+            this.listBox1.Location = new System.Drawing.Point(320, 91);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(366, 407);
+            this.listBox1.Size = new System.Drawing.Size(302, 394);
             this.listBox1.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 20);
+            this.label1.Font = new System.Drawing.Font("Courier New", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(156, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(342, 54);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Panel Filmu";
+            this.label1.Text = "PANEL FILMU";
             // 
             // MoviesMenu
             // 

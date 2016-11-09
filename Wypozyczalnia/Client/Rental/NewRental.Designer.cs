@@ -96,7 +96,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(516, 54);
             this.label1.TabIndex = 27;
-            this.label1.Text = "NOWE WYPOZYCZENIE";
+            this.label1.Text = "NOWE WYPOŻYCZENIE";
             // 
             // dateTimePickerRentDate
             // 
@@ -115,7 +115,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(244, 23);
             this.label4.TabIndex = 24;
-            this.label4.Text = "Data wypozyczenia:";
+            this.label4.Text = "Data wypożyczenia:";
             // 
             // label5
             // 

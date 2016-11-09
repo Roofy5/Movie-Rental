@@ -39,17 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnAddRental = new System.Windows.Forms.Button();
-            this.btnRemoveRental = new System.Windows.Forms.Button();
-            this.btnRentalInformations = new System.Windows.Forms.Button();
             this.RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Movies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnRentalInformations = new System.Windows.Forms.Button();
+            this.btnRemoveRental = new System.Windows.Forms.Button();
+            this.btnAddRental = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -169,6 +169,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(657, 272);
             this.dataGridView1.TabIndex = 25;
             // 
+            // RentDate
+            // 
+            this.RentDate.HeaderText = "Wypożyczenie";
+            this.RentDate.Name = "RentDate";
+            this.RentDate.ReadOnly = true;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.HeaderText = "Zwrot";
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
+            // 
+            // Movies
+            // 
+            this.Movies.HeaderText = "Liczba filmów";
+            this.Movies.Name = "Movies";
+            this.Movies.ReadOnly = true;
+            // 
+            // Points
+            // 
+            this.Points.HeaderText = "Punkty";
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Cena";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -212,25 +242,6 @@
             this.tabPage2.Text = "Wypożyczenia";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnAddRental
-            // 
-            this.btnAddRental.Location = new System.Drawing.Point(10, 319);
-            this.btnAddRental.Name = "btnAddRental";
-            this.btnAddRental.Size = new System.Drawing.Size(130, 49);
-            this.btnAddRental.TabIndex = 26;
-            this.btnAddRental.Text = "Nowe wypozyczenie";
-            this.btnAddRental.UseVisualStyleBackColor = true;
-            this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
-            // 
-            // btnRemoveRental
-            // 
-            this.btnRemoveRental.Location = new System.Drawing.Point(282, 319);
-            this.btnRemoveRental.Name = "btnRemoveRental";
-            this.btnRemoveRental.Size = new System.Drawing.Size(130, 49);
-            this.btnRemoveRental.TabIndex = 26;
-            this.btnRemoveRental.Text = "Usuń wypozyczenie";
-            this.btnRemoveRental.UseVisualStyleBackColor = true;
-            // 
             // btnRentalInformations
             // 
             this.btnRentalInformations.Location = new System.Drawing.Point(146, 319);
@@ -240,35 +251,24 @@
             this.btnRentalInformations.Text = "Szczegóły";
             this.btnRentalInformations.UseVisualStyleBackColor = true;
             // 
-            // RentDate
+            // btnRemoveRental
             // 
-            this.RentDate.HeaderText = "Wypożyczenie";
-            this.RentDate.Name = "RentDate";
-            this.RentDate.ReadOnly = true;
+            this.btnRemoveRental.Location = new System.Drawing.Point(282, 319);
+            this.btnRemoveRental.Name = "btnRemoveRental";
+            this.btnRemoveRental.Size = new System.Drawing.Size(130, 49);
+            this.btnRemoveRental.TabIndex = 26;
+            this.btnRemoveRental.Text = "Usuń wypożyczenie";
+            this.btnRemoveRental.UseVisualStyleBackColor = true;
             // 
-            // ReturnDate
+            // btnAddRental
             // 
-            this.ReturnDate.HeaderText = "Zwrot";
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.ReadOnly = true;
-            // 
-            // Movies
-            // 
-            this.Movies.HeaderText = "Liczba filmów";
-            this.Movies.Name = "Movies";
-            this.Movies.ReadOnly = true;
-            // 
-            // Points
-            // 
-            this.Points.HeaderText = "Punkty";
-            this.Points.Name = "Points";
-            this.Points.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Cena";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
+            this.btnAddRental.Location = new System.Drawing.Point(10, 319);
+            this.btnAddRental.Name = "btnAddRental";
+            this.btnAddRental.Size = new System.Drawing.Size(130, 49);
+            this.btnAddRental.TabIndex = 26;
+            this.btnAddRental.Text = "Nowe wypożyczenie";
+            this.btnAddRental.UseVisualStyleBackColor = true;
+            this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
             // 
             // ClientInformation
             // 
