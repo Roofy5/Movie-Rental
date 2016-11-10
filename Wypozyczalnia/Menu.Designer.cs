@@ -32,6 +32,8 @@
             this.btnKlienci = new System.Windows.Forms.Button();
             this.btnFilmy = new System.Windows.Forms.Button();
             this.btnKategorie = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +79,22 @@
             this.btnKategorie.UseVisualStyleBackColor = true;
             this.btnKategorie.Click += new System.EventHandler(this.btnKategorie_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(99, 452);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Zapisz";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnKategorie);
             this.Controls.Add(this.btnFilmy);
             this.Controls.Add(this.btnKlienci);
@@ -101,6 +114,8 @@
         private System.Windows.Forms.Button btnKlienci;
         private System.Windows.Forms.Button btnFilmy;
         private System.Windows.Forms.Button btnKategorie;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
