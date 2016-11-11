@@ -34,14 +34,14 @@ namespace WypozyczalniaDLL
             Rentals = new Dictionary<int, Rental>();
             Clients = new Dictionary<int, Client>();
             Personals = new Dictionary<int, PersonalData>();
-
-            CreateStructureOfXml();
         }
 
         public bool Save(List<Client> clients, List<Movie> movies, List<Category> categories)
         {
             try
             {
+                ResetDictionaries();
+                CreateStructureOfXml();
                 LoadCategoriesDictionary(categories);
                 LoadMoviesDictionary(movies);
                 LoadClientsDictionary(clients);
@@ -65,7 +65,24 @@ namespace WypozyczalniaDLL
             }
             return true;
         }
-
+        public bool Load(out List<Client> clients, out List<Movie> movies, out List<Category> categories)
+        {
+            try
+            {
+                ResetDictionaries();
+            }
+            catch (Exception)
+            {
+                clients = null;
+                movies = null;
+                categories = null;
+                return false;
+            }
+            clients = null;
+            movies = null;
+            categories = null; //USUNAC TO!!!
+            return true;
+        }
 
         private void CreateStructureOfXml()
         {
@@ -83,6 +100,14 @@ namespace WypozyczalniaDLL
             root.Add(clients);
             document.Add(root);
             this.root = document.Element("Wypozyczalnia");
+        }
+        private void ResetDictionaries()
+        {
+            Categories.Clear();
+            Movies.Clear();
+            Rentals.Clear();
+            Clients.Clear();
+            Personals.Clear();
         }
 
         private void LoadCategoriesDictionary(List<Category> categories)
@@ -161,6 +186,9 @@ namespace WypozyczalniaDLL
                 XElement categoryElement = root.Element("Categories");
                 XElement singleCategory = new XElement("Category");
 
+                XElement name = new XElement("Name");
+                name.Value = cat.Value.ReturnCategoryName();
+
                 XElement points = new XElement("PointsPerDay");
                 points.Value = cat.Value.PointsPerDay.ToString();
 
@@ -181,6 +209,7 @@ namespace WypozyczalniaDLL
                 }
 
                 singleCategory.SetAttributeValue("id", cat.Key);
+                singleCategory.Add(name);
                 singleCategory.Add(points);
                 singleCategory.Add(movies);
 
@@ -267,6 +296,24 @@ namespace WypozyczalniaDLL
                 singleClient.Add(rentals);
 
                 clientsElement.Add(singleClient);
+            }
+        }
+
+        private void LoadMovies()
+        {
+            XElement moviesElement = root.Element("Movies");
+
+            foreach (XElement singleMovie in moviesElement.Descendants())
+            {
+                int id = int.Parse(singleMovie.Attribute("id").Value);
+                string name = singleMovie.Element("Name").Value;
+                decimal price = decimal.Parse(singleMovie.Element("Price").Value, System.Globalization.CultureInfo.InvariantCulture);
+                int points = int.Parse(singleMovie.Element("Points").Value, System.Globalization.CultureInfo.InvariantCulture);
+
+                Movie newMovie = new Movie(name, price);
+                newMovie.Points = points;
+
+                Movies.Add(id, newMovie);
             }
         }
     }
