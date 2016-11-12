@@ -52,11 +52,13 @@ namespace Wypozyczalnia
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ISaveLoad loader = new SaveLoadToXML(openFileDialog1.FileName);
-                List<Client> clients;
-                List<Movie> movies;
-                List<Category> categories;
 
-                loader.Load(out clients, out movies, out categories);
+                try
+                {
+                    loader.Load(out Data.Clients, out Data.Movies, out Data.Categories);
+                }
+                catch (Exception)
+                { }
             }
         }
     }

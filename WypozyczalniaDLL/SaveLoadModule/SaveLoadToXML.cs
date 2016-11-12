@@ -75,17 +75,15 @@ namespace WypozyczalniaDLL
                 LoadMovies();
                 LoadCategories();
                 LoadRentals();
+                LoadClients();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                clients = null;
-                movies = null;
-                categories = null;
-                return false;
+                throw;
             }
-            clients = null;
-            movies = null;
-            categories = null; //USUNAC TO!!!
+            clients = Clients.Values.ToList();
+            movies = Movies.Values.ToList();
+            categories = Categories.Values.ToList();
             return true;
         }
 
@@ -320,7 +318,7 @@ namespace WypozyczalniaDLL
                 string name = singleMovie.Element("Name").Value;
                 decimal price = decimal.Parse(singleMovie.Element("Price").Value, System.Globalization.CultureInfo.InvariantCulture);
                 int points = int.Parse(singleMovie.Element("Points").Value, System.Globalization.CultureInfo.InvariantCulture);
-
+                // TODO bug przy wczytywaniu decimal
                 Movie newMovie = new Movie(name, price);
                 newMovie.Points = points;
 
@@ -376,34 +374,48 @@ namespace WypozyczalniaDLL
         }
         private void LoadRentals()
         {
-            throw new NotImplementedException();
-            XElement categoriesElement = root.Element("Categories");
+            XElement rentalsElement = root.Element("Rentals");
 
-            foreach (XElement singleCategory in categoriesElement.Elements())
+            foreach (XElement singleRental in rentalsElement.Elements())
             {
-                int id = int.Parse(singleCategory.Attribute("id").Value);
-                string name = singleCategory.Element("Name").Value;
-                Category category = null;
-                switch (name)
-                {
-                    case "Child": category = CategoryChild.Instance; break;
-                    case "Normal": category = CategoryNormal.Instance; break;
-                    case "New": category = CategoryNew.Instance; break;
-                }
+                int id = int.Parse(singleRental.Attribute("id").Value);
+                DateTime rentDate = DateTime.ParseExact(singleRental.Element("RentDate").Value, "dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime returnDate = DateTime.ParseExact(singleRental.Element("ReturnDate").Value, "dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 
-                int points = int.Parse(singleCategory.Element("PointsPerDay").Value);
-                category.PointsPerDay = points;
+                Rental rental = new Rental(rentDate, returnDate);
 
-                category.ReturnListOfMovies().Clear();
-
-                foreach (XElement movie in singleCategory.Element("Movies").Elements())
+                foreach (XElement movie in singleRental.Element("Movies").Elements())
                 {
                     int movieId = int.Parse(movie.Value);
                     Movie foundMovie = Movies[movieId];
-                    category.AddMovie(foundMovie);
+                    rental.MoviesList.Add(foundMovie);
                 }
 
-                Categories.Add(id, category);
+                Rentals.Add(id, rental);
+            }
+        }
+        private void LoadClients()
+        {
+            XElement clientsElement = root.Element("Clients");
+
+            foreach (XElement singleClient in clientsElement.Elements())
+            {
+                int id = int.Parse(singleClient.Attribute("id").Value);
+                int points = int.Parse(singleClient.Element("Points").Value);
+                int personalId = int.Parse(singleClient.Element("PersonalData").Value);
+
+                Client client = new Client(Personals[personalId]);
+                client.Points = points;
+
+                foreach (XElement rental in singleClient.Element("Rentnals").Elements())
+                {
+                    int rentalId = int.Parse(rental.Value);
+                    Rental foundRental = Rentals[rentalId];
+                    client.RentalList.Add(foundRental);
+                }
+
+                client.CalculatePoint();
+                Clients.Add(id, client);
             }
         }
     }
