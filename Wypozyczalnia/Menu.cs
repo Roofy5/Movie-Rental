@@ -46,5 +46,18 @@ namespace Wypozyczalnia
                 saver.Save(Data.Clients, Data.Movies, Data.Categories);
             }
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ISaveLoad loader = new SaveLoadToXML(openFileDialog1.FileName);
+                List<Client> clients;
+                List<Movie> movies;
+                List<Category> categories;
+
+                loader.Load(out clients, out movies, out categories);
+            }
+        }
     }
 }

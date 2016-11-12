@@ -70,8 +70,13 @@ namespace WypozyczalniaDLL
             try
             {
                 ResetDictionaries();
+                LoadFile();
+                LoadPersonals();
+                LoadMovies();
+                LoadCategories();
+                LoadRentals();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 clients = null;
                 movies = null;
@@ -100,6 +105,11 @@ namespace WypozyczalniaDLL
             root.Add(clients);
             document.Add(root);
             this.root = document.Element("Wypozyczalnia");
+        }
+        private void LoadFile()
+        {
+            document = XDocument.Load(filepath);
+            root = document.Element("Wypozyczalnia");
         }
         private void ResetDictionaries()
         {
@@ -145,7 +155,8 @@ namespace WypozyczalniaDLL
                 surname.Value = pers.Value.Surname;
 
                 XElement dateBirth = new XElement("BirthDate");
-                dateBirth.Value = pers.Value.BirthDate.ToString();
+                //dateBirth.Value = pers.Value.BirthDate.ToString();
+                dateBirth.Value = pers.Value.BirthDate.ToString("dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 
                 singlePersonal.SetAttributeValue("id", pers.Key);
                 singlePersonal.Add(name);
@@ -303,7 +314,7 @@ namespace WypozyczalniaDLL
         {
             XElement moviesElement = root.Element("Movies");
 
-            foreach (XElement singleMovie in moviesElement.Descendants())
+            foreach (XElement singleMovie in moviesElement.Elements())
             {
                 int id = int.Parse(singleMovie.Attribute("id").Value);
                 string name = singleMovie.Element("Name").Value;
@@ -314,6 +325,85 @@ namespace WypozyczalniaDLL
                 newMovie.Points = points;
 
                 Movies.Add(id, newMovie);
+            }
+        }
+        private void LoadPersonals()
+        {
+            XElement personalsElement = root.Element("PersonalDatas");
+
+            foreach (XElement singlePersonal in personalsElement.Elements())
+            {
+                int id = int.Parse(singlePersonal.Attribute("id").Value);
+                string name = singlePersonal.Element("Name").Value;
+                string surname = singlePersonal.Element("Surname").Value;
+                DateTime birthDate = DateTime.ParseExact(singlePersonal.Element("BirthDate").Value, "dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                //DateTime birthDate = DateTime.Parse(singlePersonal.Element("BirthDate").Value, System.Globalization.CultureInfo.InvariantCulture);
+                PersonalData newPersonal = new PersonalData(name, surname, birthDate);
+
+                Personals.Add(id, newPersonal);
+            }
+        }
+        private void LoadCategories()
+        {
+            XElement categoriesElement = root.Element("Categories");
+
+            foreach (XElement singleCategory in categoriesElement.Elements())
+            {
+                int id = int.Parse(singleCategory.Attribute("id").Value);
+                string name = singleCategory.Element("Name").Value;
+                Category category = null;
+                switch (name)
+                {
+                    case "Child":   category = CategoryChild.Instance; break;
+                    case "Normal": category = CategoryNormal.Instance; break;
+                    case "New": category = CategoryNew.Instance; break;
+                }
+
+                int points = int.Parse(singleCategory.Element("PointsPerDay").Value);
+                category.PointsPerDay = points;
+
+                category.ReturnListOfMovies().Clear();
+
+                foreach (XElement movie in singleCategory.Element("Movies").Elements())
+                {
+                    int movieId = int.Parse(movie.Value);
+                    Movie foundMovie = Movies[movieId];
+                    category.AddMovie(foundMovie);
+                }
+
+                Categories.Add(id, category);
+            }
+        }
+        private void LoadRentals()
+        {
+            throw new NotImplementedException();
+            XElement categoriesElement = root.Element("Categories");
+
+            foreach (XElement singleCategory in categoriesElement.Elements())
+            {
+                int id = int.Parse(singleCategory.Attribute("id").Value);
+                string name = singleCategory.Element("Name").Value;
+                Category category = null;
+                switch (name)
+                {
+                    case "Child": category = CategoryChild.Instance; break;
+                    case "Normal": category = CategoryNormal.Instance; break;
+                    case "New": category = CategoryNew.Instance; break;
+                }
+
+                int points = int.Parse(singleCategory.Element("PointsPerDay").Value);
+                category.PointsPerDay = points;
+
+                category.ReturnListOfMovies().Clear();
+
+                foreach (XElement movie in singleCategory.Element("Movies").Elements())
+                {
+                    int movieId = int.Parse(movie.Value);
+                    Movie foundMovie = Movies[movieId];
+                    category.AddMovie(foundMovie);
+                }
+
+                Categories.Add(id, category);
             }
         }
     }
