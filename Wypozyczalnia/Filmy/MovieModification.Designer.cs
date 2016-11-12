@@ -53,11 +53,13 @@
             // 
             // listCategories
             // 
+            this.listCategories.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listCategories.FormattingEnabled = true;
+            this.listCategories.ItemHeight = 23;
             this.listCategories.Location = new System.Drawing.Point(337, 133);
             this.listCategories.Name = "listCategories";
             this.listCategories.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listCategories.Size = new System.Drawing.Size(305, 95);
+            this.listCategories.Size = new System.Drawing.Size(305, 96);
             this.listCategories.TabIndex = 58;
             this.listCategories.SelectedIndexChanged += new System.EventHandler(this.listCategories_SelectedIndexChanged);
             // 

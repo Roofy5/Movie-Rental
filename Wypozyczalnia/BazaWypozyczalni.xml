@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wypozyczalnia>
+  <Movies>
+    <Movie id="0">
+      <Name>Harry Potter</Name>
+      <Price>10</Price>
+      <Points>5</Points>
+    </Movie>
+    <Movie id="1">
+      <Name>Leon Zawodowiec</Name>
+      <Price>5</Price>
+      <Points>2</Points>
+    </Movie>
+    <Movie id="2">
+      <Name>Kaczka Dziwaczka</Name>
+      <Price>2</Price>
+      <Points>1</Points>
+    </Movie>
+    <Movie id="3">
+      <Name>Gniew Tytanów</Name>
+      <Price>2.99</Price>
+      <Points>5</Points>
+    </Movie>
+    <Movie id="4">
+      <Name>Starcie Tytanów</Name>
+      <Price>9.99</Price>
+      <Points>3</Points>
+    </Movie>
+    <Movie id="5">
+      <Name>Kubuś Puchatek</Name>
+      <Price>3.33</Price>
+      <Points>1</Points>
+    </Movie>
+    <Movie id="6">
+      <Name>Indiana Jones</Name>
+      <Price>15</Price>
+      <Points>5</Points>
+    </Movie>
+    <Movie id="7">
+      <Name>James Bond</Name>
+      <Price>30</Price>
+      <Points>3</Points>
+    </Movie>
+    <Movie id="8">
+      <Name>Chłopaki nie płaczą</Name>
+      <Price>5.25</Price>
+      <Points>0</Points>
+    </Movie>
+  </Movies>
+  <Categories>
+    <Category id="0">
+      <Name>Child</Name>
+      <PointsPerDay>1</PointsPerDay>
+      <Movies>
+        <Movie>2</Movie>
+        <Movie>5</Movie>
+      </Movies>
+    </Category>
+    <Category id="1">
+      <Name>Normal</Name>
+      <PointsPerDay>2</PointsPerDay>
+      <Movies>
+        <Movie>0</Movie>
+        <Movie>1</Movie>
+        <Movie>3</Movie>
+        <Movie>6</Movie>
+      </Movies>
+    </Category>
+    <Category id="2">
+      <Name>New</Name>
+      <PointsPerDay>3</PointsPerDay>
+      <Movies>
+        <Movie>0</Movie>
+        <Movie>3</Movie>
+        <Movie>4</Movie>
+        <Movie>6</Movie>
+        <Movie>7</Movie>
+      </Movies>
+    </Category>
+  </Categories>
+  <Rentals>
+    <Rental id="0">
+      <RentDate>10.11.2016 23:47:55</RentDate>
+      <ReturnDate>17.11.2016 23:47:55</ReturnDate>
+      <Movies>
+        <Movie>0</Movie>
+        <Movie>1</Movie>
+      </Movies>
+    </Rental>
+    <Rental id="1">
+      <RentDate>13.11.2016 23:48:05</RentDate>
+      <ReturnDate>24.11.2016 23:48:05</ReturnDate>
+      <Movies>
+        <Movie>2</Movie>
+      </Movies>
+    </Rental>
+    <Rental id="2">
+      <RentDate>10.11.2016 23:48:12</RentDate>
+      <ReturnDate>11.11.2016 23:48:12</ReturnDate>
+      <Movies>
+        <Movie>0</Movie>
+      </Movies>
+    </Rental>
+    <Rental id="3">
+      <RentDate>03.11.2016 00:16:57</RentDate>
+      <ReturnDate>18.11.2016 00:16:57</ReturnDate>
+      <Movies>
+        <Movie>0</Movie>
+        <Movie>2</Movie>
+        <Movie>5</Movie>
+        <Movie>7</Movie>
+        <Movie>8</Movie>
+      </Movies>
+    </Rental>
+  </Rentals>
+  <PersonalDatas>
+    <Personal id="0">
+      <Name>Michał</Name>
+      <Surname>Gucwa</Surname>
+      <BirthDate>13.07.1995 23:47:15</BirthDate>
+    </Personal>
+    <Personal id="1">
+      <Name>Justyna</Name>
+      <Surname>Wolska</Surname>
+      <BirthDate>10.09.1995 23:47:29</BirthDate>
+    </Personal>
+    <Personal id="2">
+      <Name>Klaudia</Name>
+      <Surname>Kaczka</Surname>
+      <BirthDate>28.04.1995 23:47:39</BirthDate>
+    </Personal>
+    <Personal id="3">
+      <Name>Adam</Name>
+      <Surname>Nowak</Surname>
+      <BirthDate>03.03.2000 00:08:19</BirthDate>
+    </Personal>
+    <Personal id="4">
+      <Name>Jolanta</Name>
+      <Surname>Poldek</Surname>
+      <BirthDate>30.01.1999 00:08:30</BirthDate>
+    </Personal>
+    <Personal id="5">
+      <Name>Barbara</Name>
+      <Surname>Maciaszek</Surname>
+      <BirthDate>05.12.1960 00:08:42</BirthDate>
+    </Personal>
+    <Personal id="6">
+      <Name>Wacław</Name>
+      <Surname>Palik</Surname>
+      <BirthDate>12.05.1955 00:08:57</BirthDate>
+    </Personal>
+  </PersonalDatas>
+  <Clients>
+    <Client id="0">
+      <Points>49</Points>
+      <PersonalData>0</PersonalData>
+      <Rentnals>
+        <Rental>0</Rental>
+      </Rentnals>
+    </Client>
+    <Client id="1">
+      <Points>16</Points>
+      <PersonalData>1</PersonalData>
+      <Rentnals>
+        <Rental>1</Rental>
+        <Rental>2</Rental>
+      </Rentnals>
+    </Client>
+    <Client id="2">
+      <Points>0</Points>
+      <PersonalData>2</PersonalData>
+      <Rentnals />
+    </Client>
+    <Client id="3">
+      <Points>0</Points>
+      <PersonalData>3</PersonalData>
+      <Rentnals />
+    </Client>
+    <Client id="4">
+      <Points>0</Points>
+      <PersonalData>4</PersonalData>
+      <Rentnals>
+        <Rental>3</Rental>
+      </Rentnals>
+    </Client>
+    <Client id="5">
+      <Points>0</Points>
+      <PersonalData>5</PersonalData>
+      <Rentnals />
+    </Client>
+    <Client id="6">
+      <Points>0</Points>
+      <PersonalData>6</PersonalData>
+      <Rentnals />
+    </Client>
+  </Clients>
+</Wypozyczalnia>

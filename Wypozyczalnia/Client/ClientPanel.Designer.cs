@@ -50,10 +50,12 @@
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.listBox1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
             this.listBox1.Location = new System.Drawing.Point(335, 98);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(323, 394);
+            this.listBox1.Size = new System.Drawing.Size(323, 395);
             this.listBox1.TabIndex = 1;
             // 
             // btnAddClient

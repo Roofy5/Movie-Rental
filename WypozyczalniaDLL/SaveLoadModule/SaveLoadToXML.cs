@@ -131,7 +131,7 @@ namespace WypozyczalniaDLL
         private void LoadRentalsDictionary(List<Rental> rentals)
         {
             for (int i = 0; i < rentals.Count; i++)
-                Rentals.Add(i + Rentals.Keys.Count, rentals[i]);
+                Rentals.Add(Rentals.Keys.Count, rentals[i]); //i + rentals.Keys.Count
         }
         private void LoadClientsDictionary(List<Client> clients)
         {
@@ -175,7 +175,7 @@ namespace WypozyczalniaDLL
                 name.Value = movie.Value.Name;
 
                 XElement price = new XElement("Price");
-                price.Value = movie.Value.Price.ToString();
+                price.Value = movie.Value.Price.ToString(System.Globalization.CultureInfo.InvariantCulture);
 
                 XElement points = new XElement("Points");
                 points.Value = movie.Value.Points.ToString();
@@ -318,9 +318,8 @@ namespace WypozyczalniaDLL
                 string name = singleMovie.Element("Name").Value;
                 decimal price = decimal.Parse(singleMovie.Element("Price").Value, System.Globalization.CultureInfo.InvariantCulture);
                 int points = int.Parse(singleMovie.Element("Points").Value, System.Globalization.CultureInfo.InvariantCulture);
-                // TODO bug przy wczytywaniu decimal
                 Movie newMovie = new Movie(name, price);
-                newMovie.Points = points;
+                //newMovie.Points = points;
 
                 Movies.Add(id, newMovie);
             }

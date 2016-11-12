@@ -48,11 +48,13 @@
             // listMovies
             // 
             this.listMovies.Enabled = false;
+            this.listMovies.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listMovies.FormattingEnabled = true;
+            this.listMovies.ItemHeight = 23;
             this.listMovies.Location = new System.Drawing.Point(46, 192);
             this.listMovies.Name = "listMovies";
             this.listMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listMovies.Size = new System.Drawing.Size(305, 95);
+            this.listMovies.Size = new System.Drawing.Size(305, 96);
             this.listMovies.TabIndex = 69;
             // 
             // dateTimePickerReturnDate

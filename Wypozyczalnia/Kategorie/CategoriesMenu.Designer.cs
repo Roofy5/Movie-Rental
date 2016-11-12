@@ -38,10 +38,12 @@
             // 
             // listCategories
             // 
+            this.listCategories.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listCategories.FormattingEnabled = true;
+            this.listCategories.ItemHeight = 23;
             this.listCategories.Location = new System.Drawing.Point(12, 82);
             this.listCategories.Name = "listCategories";
-            this.listCategories.Size = new System.Drawing.Size(175, 394);
+            this.listCategories.Size = new System.Drawing.Size(175, 464);
             this.listCategories.TabIndex = 6;
             this.listCategories.SelectedIndexChanged += new System.EventHandler(this.listCategories_SelectedIndexChanged);
             // 
@@ -57,10 +59,12 @@
             // 
             // listMovies
             // 
+            this.listMovies.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listMovies.FormattingEnabled = true;
+            this.listMovies.ItemHeight = 23;
             this.listMovies.Location = new System.Drawing.Point(464, 82);
             this.listMovies.Name = "listMovies";
-            this.listMovies.Size = new System.Drawing.Size(208, 394);
+            this.listMovies.Size = new System.Drawing.Size(208, 464);
             this.listMovies.TabIndex = 6;
             // 
             // label5

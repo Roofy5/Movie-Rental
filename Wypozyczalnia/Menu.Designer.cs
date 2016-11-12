@@ -36,6 +36,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnLoad = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnInformacje = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,19 +84,25 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(99, 447);
+            this.btnSave.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSave.Location = new System.Drawing.Point(528, 297);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 28);
+            this.btnSave.Size = new System.Drawing.Size(119, 47);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Zapisz";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Xml files|*.xml";
+            // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(99, 476);
+            this.btnLoad.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLoad.Location = new System.Drawing.Point(528, 345);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 33);
+            this.btnLoad.Size = new System.Drawing.Size(119, 52);
             this.btnLoad.TabIndex = 3;
             this.btnLoad.Text = "Wczytaj";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -104,6 +111,18 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Xml files|*.xml";
+            // 
+            // btnInformacje
+            // 
+            this.btnInformacje.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
+            this.btnInformacje.Location = new System.Drawing.Point(397, 297);
+            this.btnInformacje.Name = "btnInformacje";
+            this.btnInformacje.Size = new System.Drawing.Size(125, 100);
+            this.btnInformacje.TabIndex = 1;
+            this.btnInformacje.Text = "Informacje";
+            this.btnInformacje.UseVisualStyleBackColor = true;
+            this.btnInformacje.Click += new System.EventHandler(this.btnInformacje_Click);
             // 
             // Menu
             // 
@@ -112,6 +131,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnInformacje);
             this.Controls.Add(this.btnKategorie);
             this.Controls.Add(this.btnFilmy);
             this.Controls.Add(this.btnKlienci);
@@ -135,6 +155,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnInformacje;
     }
 }
 

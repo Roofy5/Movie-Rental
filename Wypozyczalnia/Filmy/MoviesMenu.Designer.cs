@@ -86,10 +86,12 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
             this.listBox1.Location = new System.Drawing.Point(320, 91);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(302, 394);
+            this.listBox1.Size = new System.Drawing.Size(302, 395);
             this.listBox1.TabIndex = 4;
             // 
             // label1

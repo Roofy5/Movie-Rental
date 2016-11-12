@@ -105,6 +105,12 @@
     <Compile Include="Filmy\MoviesMenu.Designer.cs">
       <DependentUpon>MoviesMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Informacje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informacje.Designer.cs">
+      <DependentUpon>Informacje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kategorie\CategoriesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="Filmy\MoviesMenu.resx">
       <DependentUpon>MoviesMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informacje.resx">
+      <DependentUpon>Informacje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kategorie\CategoriesMenu.resx">
       <DependentUpon>CategoriesMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,9 @@
       <Project>{7a6af89e-2d81-48f2-8cd2-236712fcb803}</Project>
       <Name>WypozyczalniaDLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BazaWypozyczalni.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -195,11 +195,13 @@
             // 
             // listMovies
             // 
+            this.listMovies.Font = new System.Drawing.Font("Courier New", 15.75F);
             this.listMovies.FormattingEnabled = true;
+            this.listMovies.ItemHeight = 23;
             this.listMovies.Location = new System.Drawing.Point(16, 241);
             this.listMovies.Name = "listMovies";
             this.listMovies.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listMovies.Size = new System.Drawing.Size(305, 95);
+            this.listMovies.Size = new System.Drawing.Size(305, 96);
             this.listMovies.TabIndex = 29;
             this.listMovies.SelectedIndexChanged += new System.EventHandler(this.listMovies_SelectedIndexChanged);
             // 
