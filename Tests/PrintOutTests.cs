@@ -44,7 +44,7 @@ namespace Tests
         [TestMethod]
         public void PrintOut_Print()
         {
-            IPrintOut printer = new PrintToString();
+            APrintOut printer = new PrintToString();
 
             string output = printer.PrintOut(rental1);
             string output2 = printer.PrintOut(rental3);

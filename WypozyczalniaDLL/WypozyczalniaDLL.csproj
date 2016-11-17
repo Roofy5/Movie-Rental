@@ -42,11 +42,15 @@
     <Compile Include="Category\CategoryChild.cs" />
     <Compile Include="Category\CategoryNew.cs" />
     <Compile Include="Category\CategoryNormal.cs" />
+    <Compile Include="Category\CategoryWestern.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Category\Category.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="PersonalData.cs" />
-    <Compile Include="PrintModule\IPrintOut.cs" />
+    <Compile Include="PointsCalculatingStrategy\PointsCalculatingStrategy.cs" />
+    <Compile Include="PointsCalculatingStrategy\PointsDefaultStrategy.cs" />
+    <Compile Include="PrintModule\APrintOut.cs" />
+    <Compile Include="PrintModule\PrintToHTML.cs" />
     <Compile Include="PrintModule\PrintToString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rental.cs" />

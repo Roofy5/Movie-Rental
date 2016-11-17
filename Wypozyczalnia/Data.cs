@@ -13,7 +13,7 @@ namespace Wypozyczalnia
         public static List<Client> Clients;
         public static List<Movie> Movies;
         public static List<Category> Categories;
-        public static List<IPrintOut> PrintOutTypes;
+        public static List<APrintOut> PrintOutTypes;
 
         static Data()
         {
@@ -23,16 +23,19 @@ namespace Wypozyczalnia
             {
                 CategoryChild.Instance,
                 CategoryNormal.Instance,
-                CategoryNew.Instance
+                CategoryNew.Instance,
+                CategoryWestern.Instance
             };
 
             CategoryChild.Instance.PointsPerDay = 1;
             CategoryNormal.Instance.PointsPerDay = 2;
             CategoryNew.Instance.PointsPerDay = 3;
+            CategoryWestern.Instance.PointsPerDay = 2;
 
-            PrintOutTypes = new List<IPrintOut>()
+            PrintOutTypes = new List<APrintOut>()
             {
-                new PrintToString()
+                new PrintToString(),
+                new PrintToHTML()
             };
         }
     }

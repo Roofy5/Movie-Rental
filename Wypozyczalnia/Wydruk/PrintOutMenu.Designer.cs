@@ -46,7 +46,6 @@
             this.listPrintOutTypes.ItemHeight = 23;
             this.listPrintOutTypes.Location = new System.Drawing.Point(46, 105);
             this.listPrintOutTypes.Name = "listPrintOutTypes";
-            this.listPrintOutTypes.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listPrintOutTypes.Size = new System.Drawing.Size(162, 280);
             this.listPrintOutTypes.TabIndex = 84;
             // 

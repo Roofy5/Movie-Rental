@@ -77,6 +77,11 @@
         <Movie>7</Movie>
       </Movies>
     </Category>
+    <Category id="3">
+      <Name>Western</Name>
+      <PointsPerDay>2</PointsPerDay>
+      <Movies />
+    </Category>
   </Categories>
   <Rentals>
     <Rental id="0">

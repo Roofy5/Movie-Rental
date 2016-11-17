@@ -11,6 +11,7 @@ namespace WypozyczalniaDLL
         private DateTime rentDate;
         private DateTime returnDate;
         private List<Movie> moviesList;
+        private PointsCalculatingStrategy pointsStrategy;
 
         public DateTime ReturnDate
         {
@@ -28,7 +29,7 @@ namespace WypozyczalniaDLL
         }
 
         /// <exception cref="ArgumentException"></exception>
-        public Rental(DateTime rentDate, DateTime returnDate)
+        public Rental(DateTime rentDate, DateTime returnDate, PointsCalculatingStrategy strategy = null)
         {
             this.rentDate = rentDate;
 
@@ -37,13 +38,19 @@ namespace WypozyczalniaDLL
 
             this.returnDate = returnDate;
             this.moviesList = new List<Movie>();
+
+            //pointsStrategy = strategy == null ? new PointsDefaultStrategy() : strategy;
+            pointsStrategy = strategy ?? new PointsDefaultStrategy();
         }
 
-        public Rental(DateTime rentDate, int daysPeriod)
+        public Rental(DateTime rentDate, int daysPeriod, PointsCalculatingStrategy strategy = null)
         {
             this.rentDate = rentDate;
             this.returnDate = rentDate.AddDays((int)daysPeriod);
             this.moviesList = new List<Movie>();
+
+            //pointsStrategy = strategy == null ? new PointsDefaultStrategy() : strategy;
+            pointsStrategy = strategy ?? new PointsDefaultStrategy();
         }
 
         public decimal CalculatePrice()
@@ -60,14 +67,7 @@ namespace WypozyczalniaDLL
 
         public int CalculatePoints()
         {
-            int points = 0;
-            foreach (Movie movie in moviesList)
-            {
-                // TODO
-                // Pytanie jak liczyc dni - czy uwzgledniac date zwrotu jako dzien wypozyczony?
-                points += movie.Points * (returnDate.Date - rentDate.Date).Days;
-            }
-            return points;
+            return pointsStrategy.CalcualtePoints(this);
         }
     }
 }

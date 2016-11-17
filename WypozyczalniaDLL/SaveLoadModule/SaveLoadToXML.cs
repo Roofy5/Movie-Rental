@@ -354,6 +354,7 @@ namespace WypozyczalniaDLL
                     case "Child":   category = CategoryChild.Instance; break;
                     case "Normal": category = CategoryNormal.Instance; break;
                     case "New": category = CategoryNew.Instance; break;
+                    case "Western": category = CategoryWestern.Instance; break;
                 }
 
                 int points = int.Parse(singleCategory.Element("PointsPerDay").Value);

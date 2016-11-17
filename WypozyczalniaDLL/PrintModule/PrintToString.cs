@@ -6,37 +6,14 @@ using System.Threading.Tasks;
 
 namespace WypozyczalniaDLL
 {
-    public class PrintToString : IPrintOut
+    public class PrintToString : APrintOut
     {
-        private int rentDays;
-
-        public string PrintOut(Rental rental, PrintConfiguration configuration = PrintConfiguration.ALL)
-        {
-            rentDays = (rental.ReturnDate - rental.RentDate).Days;
-            string header = PrintHeader(rental);
-            string body = "";
-            switch (configuration)
-            {
-                case PrintConfiguration.POINTS_ONLY:
-                    body = PrintPointsOnly(rental, header);
-                    break;
-                case PrintConfiguration.PRICE_ONLY:
-                    body = PrintPriceOnly(rental, header);
-                    break;
-                default:
-                    body = PrintAll(rental, header);
-                    break;
-            }
-
-            return PrintFooter(body);                
-        }
-
         public override string ToString()
         {
             return "Druk do stringa";
         }
 
-        private string PrintHeader(Rental rental)
+        protected override string PrintHeader(Rental rental)
         {
             StringBuilder header = new StringBuilder();
             header.Append('-', 10);
@@ -45,7 +22,7 @@ namespace WypozyczalniaDLL
             return header.ToString();
         }
 
-        private string PrintPriceOnly(Rental rental, string header)
+        protected override string PrintPriceOnly(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
             body.Append("Film\tPrice per day\tSummary price\n");
@@ -61,7 +38,7 @@ namespace WypozyczalniaDLL
             return body.ToString();
         }
 
-        private string PrintPointsOnly(Rental rental, string header)
+        protected override string PrintPointsOnly(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
             body.Append("Film\tPoints per day\tSummary points\n");
@@ -77,7 +54,7 @@ namespace WypozyczalniaDLL
             return body.ToString();
         }
 
-        private string PrintAll(Rental rental, string header)
+        protected override string PrintAll(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
             body.Append("Film\tPoints per day\tPrice per day\tSummary points\tSummary price\n");
@@ -93,7 +70,7 @@ namespace WypozyczalniaDLL
             return body.ToString();
         }
 
-        private string PrintFooter(string body)
+        protected override string PrintFooter(string body)
         {
             StringBuilder footer = new StringBuilder(body);
             footer.Append('-', 10);

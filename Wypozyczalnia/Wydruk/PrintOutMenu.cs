@@ -27,7 +27,7 @@ namespace Wypozyczalnia
         {
             listPrintOutTypes.Items.Clear();
 
-            foreach (IPrintOut type in Data.PrintOutTypes)
+            foreach (APrintOut type in Data.PrintOutTypes)
             {
                 listPrintOutTypes.Items.Add(type);
             }
@@ -35,10 +35,10 @@ namespace Wypozyczalnia
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            IPrintOut printer;
+            APrintOut printer;
             try
             {
-                printer = listPrintOutTypes.SelectedItem as IPrintOut;
+                printer = listPrintOutTypes.SelectedItem as APrintOut;
             }
             catch (Exception)
             {
