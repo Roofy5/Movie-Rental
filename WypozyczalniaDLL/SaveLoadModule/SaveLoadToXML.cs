@@ -238,6 +238,9 @@ namespace WypozyczalniaDLL
                 XElement returnDate = new XElement("ReturnDate");
                 returnDate.Value = rent.Value.ReturnDate.ToString();
 
+                XElement pointsStrategy = new XElement("PointsStrategy");
+                pointsStrategy.Value = rent.Value.PointsStrategy.GetNameOfStrategy();
+
                 XElement movies = new XElement("Movies");
 
                 foreach (Movie movie in rent.Value.MoviesList)
@@ -257,6 +260,7 @@ namespace WypozyczalniaDLL
                 singleRental.SetAttributeValue("id", rent.Key);
                 singleRental.Add(rentDate);
                 singleRental.Add(returnDate);
+                singleRental.Add(pointsStrategy);
                 singleRental.Add(movies);
 
                 rentalElement.Add(singleRental);
@@ -381,8 +385,15 @@ namespace WypozyczalniaDLL
                 int id = int.Parse(singleRental.Attribute("id").Value);
                 DateTime rentDate = DateTime.ParseExact(singleRental.Element("RentDate").Value, "dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime returnDate = DateTime.ParseExact(singleRental.Element("ReturnDate").Value, "dd.MM.yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                PointsCalculatingStrategy pointsStrategy = new PointsDefaultStrategy();
+                string pointsStrategyName = singleRental.Element("PointsStrategy").Value;
 
-                Rental rental = new Rental(rentDate, returnDate);
+                switch(pointsStrategyName)
+                {
+                    case "1d5p": pointsStrategy = new PointsOneDayStrategy(); break;
+                }
+
+                Rental rental = new Rental(rentDate, returnDate, pointsStrategy);
 
                 foreach (XElement movie in singleRental.Element("Movies").Elements())
                 {

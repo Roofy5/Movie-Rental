@@ -69,17 +69,6 @@ namespace Tests
         }
 
         [TestMethod]
-        public void SaveLoad_CreatingStrucutre()
-        {
-            SaveLoadToXML doc = new SaveLoadToXML("C:\\\\plik.xml");
-            XElement root = doc.Document.Element("Wypozyczalnia");
-            XElement brak = doc.Document.Element("asdas");
-            
-            Assert.IsNotNull(root);
-            Assert.IsNull(brak);
-        }
-
-        [TestMethod]
         public void SaveLoad_SaveTest_Dictionares()
         {
             SaveLoadToXML test = new SaveLoadToXML(filePath);

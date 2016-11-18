@@ -27,6 +27,11 @@ namespace WypozyczalniaDLL
         {
             get { return moviesList; }
         }
+        public PointsCalculatingStrategy PointsStrategy
+        {
+            get { return pointsStrategy; }
+            set { pointsStrategy = value; }
+        }
 
         /// <exception cref="ArgumentException"></exception>
         public Rental(DateTime rentDate, DateTime returnDate, PointsCalculatingStrategy strategy = null)

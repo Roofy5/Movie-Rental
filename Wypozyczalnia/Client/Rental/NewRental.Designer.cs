@@ -48,6 +48,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtMovies = new System.Windows.Forms.TextBox();
             this.btnAddRental = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboPoints = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtImie
@@ -101,7 +103,7 @@
             // dateTimePickerRentDate
             // 
             this.dateTimePickerRentDate.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerRentDate.Location = new System.Drawing.Point(16, 167);
+            this.dateTimePickerRentDate.Location = new System.Drawing.Point(16, 151);
             this.dateTimePickerRentDate.Name = "dateTimePickerRentDate";
             this.dateTimePickerRentDate.Size = new System.Drawing.Size(305, 22);
             this.dateTimePickerRentDate.TabIndex = 28;
@@ -111,7 +113,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(12, 141);
+            this.label4.Location = new System.Drawing.Point(12, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(244, 23);
             this.label4.TabIndex = 24;
@@ -121,7 +123,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(394, 141);
+            this.label5.Location = new System.Drawing.Point(394, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 23);
             this.label5.TabIndex = 24;
@@ -130,7 +132,7 @@
             // dateTimePickerReturnDate
             // 
             this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(396, 167);
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(396, 151);
             this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
             this.dateTimePickerReturnDate.Size = new System.Drawing.Size(305, 22);
             this.dateTimePickerReturnDate.TabIndex = 28;
@@ -140,7 +142,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(394, 215);
+            this.label6.Location = new System.Drawing.Point(489, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(153, 23);
             this.label6.TabIndex = 24;
@@ -150,7 +152,7 @@
             // 
             this.txtDays.Enabled = false;
             this.txtDays.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDays.Location = new System.Drawing.Point(553, 212);
+            this.txtDays.Location = new System.Drawing.Point(648, 241);
             this.txtDays.Name = "txtDays";
             this.txtDays.Size = new System.Drawing.Size(85, 31);
             this.txtDays.TabIndex = 23;
@@ -237,7 +239,7 @@
             // btnAddRental
             // 
             this.btnAddRental.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddRental.Location = new System.Drawing.Point(409, 260);
+            this.btnAddRental.Location = new System.Drawing.Point(483, 280);
             this.btnAddRental.Name = "btnAddRental";
             this.btnAddRental.Size = new System.Drawing.Size(250, 57);
             this.btnAddRental.TabIndex = 50;
@@ -245,11 +247,34 @@
             this.btnAddRental.UseVisualStyleBackColor = true;
             this.btnAddRental.Click += new System.EventHandler(this.btnAddRental_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(415, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(205, 23);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Naliczanie pkt:";
+            // 
+            // comboPoints
+            // 
+            this.comboPoints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPoints.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboPoints.FormattingEnabled = true;
+            this.comboPoints.Location = new System.Drawing.Point(626, 188);
+            this.comboPoints.Name = "comboPoints";
+            this.comboPoints.Size = new System.Drawing.Size(107, 26);
+            this.comboPoints.TabIndex = 52;
+            this.comboPoints.SelectedIndexChanged += new System.EventHandler(this.comboPoints_SelectedIndexChanged);
+            // 
             // NewRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.comboPoints);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnAddRental);
             this.Controls.Add(this.listMovies);
             this.Controls.Add(this.dateTimePickerReturnDate);
@@ -299,5 +324,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtMovies;
         private System.Windows.Forms.Button btnAddRental;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboPoints;
     }
 }

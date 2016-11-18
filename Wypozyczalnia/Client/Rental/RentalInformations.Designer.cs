@@ -43,6 +43,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtStrategiaPkt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listMovies
@@ -198,11 +200,33 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "Data wypożyczenia:";
             // 
+            // txtStrategiaPkt
+            // 
+            this.txtStrategiaPkt.Enabled = false;
+            this.txtStrategiaPkt.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtStrategiaPkt.Location = new System.Drawing.Point(583, 208);
+            this.txtStrategiaPkt.Name = "txtStrategiaPkt";
+            this.txtStrategiaPkt.Size = new System.Drawing.Size(85, 31);
+            this.txtStrategiaPkt.TabIndex = 70;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(372, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 23);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Naliczanie pkt:";
+            // 
             // RentalInformations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.txtStrategiaPkt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listMovies);
             this.Controls.Add(this.dateTimePickerReturnDate);
             this.Controls.Add(this.dateTimePickerRentDate);
@@ -241,5 +265,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtStrategiaPkt;
+        private System.Windows.Forms.Label label2;
     }
 }

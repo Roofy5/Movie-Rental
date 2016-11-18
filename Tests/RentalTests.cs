@@ -155,5 +155,39 @@ namespace Tests
             CategoryNormal.Instance.AddMovie(film);
             Assert.AreEqual(20, rental.CalculatePoints());
         }
+        [TestMethod]
+        public void Rental_CalculatePoints_SecondStrategy()
+        {
+            Rental rental = new Rental(DateTime.Today, 5, new PointsOneDayStrategy());
+            Movie film = new Movie("Leon", 10);
+            Movie film2 = new Movie("Leonasd", 20);
+
+            CategoryNew.Instance.PointsPerDay = 20;
+            Category kategoria = CategoryNormal.Instance;
+            kategoria.PointsPerDay = 1;
+
+            CategoryNew.Instance.AddMovie(film);
+            kategoria.AddMovie(film2);
+
+            rental.MoviesList.Add(film);
+            rental.MoviesList.Add(film2);
+
+            Assert.AreEqual(27, rental.CalculatePoints());
+        }
+        [TestMethod]
+        public void Rental_CalculatePoints_SecondStrategy_OnlyOneDay()
+        {
+            Rental rental = new Rental(DateTime.Today, 1, new PointsOneDayStrategy());
+            Movie film = new Movie("Leon", 10);
+            Movie film2 = new Movie("Leonasd", 20);
+            
+            CategoryNew.Instance.AddMovie(film);
+            CategoryNormal.Instance.AddMovie(film2);
+
+            rental.MoviesList.Add(film);
+            rental.MoviesList.Add(film2);
+
+            Assert.AreEqual(15, rental.CalculatePoints());
+        }
     }
 }

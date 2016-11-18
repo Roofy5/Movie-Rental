@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace WypozyczalniaDLL
 {
-    public class PointsDefaultStrategy : PointsCalculatingStrategy
+    public class PointsOneDayStrategy : PointsCalculatingStrategy
     {
         public override int CalcualtePoints(Rental rental)
         {
             int points = 0;
+            int difference = (rental.ReturnDate - rental.RentDate).Days;
+            difference = difference == 0 ? difference : difference - 1;
+
             foreach (Movie movie in rental.MoviesList)
             {
-                // TODO
-                // Pytanie jak liczyc dni - czy uwzgledniac date zwrotu jako dzien wypozyczony?
-                points += movie.Points * (rental.ReturnDate.Date - rental.RentDate.Date).Days;
+                int moviePoints = 5 + difference;
+                if (movie.Categories.Contains(CategoryNew.Instance))
+                    moviePoints *= 2;
+                points += moviePoints;
             }
 
             return points;
@@ -23,12 +27,12 @@ namespace WypozyczalniaDLL
 
         public override string GetNameOfStrategy()
         {
-            return "Default";
+            return "1d5p";
         }
 
         public override string ToString()
         {
-            return "Domyślne";
+            return "1 dzień 5pkt";
         }
     }
 }

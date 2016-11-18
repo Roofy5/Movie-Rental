@@ -49,6 +49,7 @@
     <Compile Include="PersonalData.cs" />
     <Compile Include="PointsCalculatingStrategy\PointsCalculatingStrategy.cs" />
     <Compile Include="PointsCalculatingStrategy\PointsDefaultStrategy.cs" />
+    <Compile Include="PointsCalculatingStrategy\PointsOneDayStrategy.cs" />
     <Compile Include="PrintModule\APrintOut.cs" />
     <Compile Include="PrintModule\PrintToHTML.cs" />
     <Compile Include="PrintModule\PrintToString.cs" />

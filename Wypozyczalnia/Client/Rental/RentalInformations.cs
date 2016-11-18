@@ -38,6 +38,7 @@ namespace Wypozyczalnia
             txtMovies.Text = listMovies.Items.Count.ToString();
             txtPoints.Text = selectedRental.CalculatePoints().ToString();
             txtPrice.Text = selectedRental.CalculatePrice().ToString();
+            txtStrategiaPkt.Text = selectedRental.PointsStrategy.ToString();
         }
     }
 }

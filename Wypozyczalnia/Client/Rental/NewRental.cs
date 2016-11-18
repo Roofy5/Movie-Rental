@@ -34,6 +34,8 @@ namespace Wypozyczalnia
             {
                 listMovies.Items.Add(movie);
             }
+
+            comboPoints.DataSource = Data.RentalPointsStrategies;
         }
 
         private void DateChange(object sender, EventArgs e)
@@ -77,6 +79,12 @@ namespace Wypozyczalnia
 
             selectedClient.RentalList.Add(rental);
             this.Close();
+        }
+
+        private void comboPoints_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rental.PointsStrategy = comboPoints.SelectedItem as PointsCalculatingStrategy;
+            CalculatePointsAndPrice();
         }
     }
 }

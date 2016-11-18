@@ -14,6 +14,7 @@ namespace Wypozyczalnia
         public static List<Movie> Movies;
         public static List<Category> Categories;
         public static List<APrintOut> PrintOutTypes;
+        public static List<PointsCalculatingStrategy> RentalPointsStrategies;
 
         static Data()
         {
@@ -36,6 +37,12 @@ namespace Wypozyczalnia
             {
                 new PrintToString(),
                 new PrintToHTML()
+            };
+
+            RentalPointsStrategies = new List<PointsCalculatingStrategy>()
+            {
+                new PointsDefaultStrategy(),
+                new PointsOneDayStrategy()
             };
         }
     }

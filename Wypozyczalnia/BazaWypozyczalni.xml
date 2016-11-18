@@ -87,28 +87,41 @@
     <Rental id="0">
       <RentDate>10.11.2016 23:47:55</RentDate>
       <ReturnDate>17.11.2016 23:47:55</ReturnDate>
+      <PointsStrategy>Default</PointsStrategy>
       <Movies>
         <Movie>0</Movie>
         <Movie>1</Movie>
       </Movies>
     </Rental>
     <Rental id="1">
+      <RentDate>18.11.2016 15:12:01</RentDate>
+      <ReturnDate>21.11.2016 15:12:01</ReturnDate>
+      <PointsStrategy>1d5p</PointsStrategy>
+      <Movies>
+        <Movie>0</Movie>
+        <Movie>1</Movie>
+      </Movies>
+    </Rental>
+    <Rental id="2">
       <RentDate>13.11.2016 23:48:05</RentDate>
       <ReturnDate>24.11.2016 23:48:05</ReturnDate>
+      <PointsStrategy>Default</PointsStrategy>
       <Movies>
         <Movie>2</Movie>
       </Movies>
     </Rental>
-    <Rental id="2">
+    <Rental id="3">
       <RentDate>10.11.2016 23:48:12</RentDate>
       <ReturnDate>11.11.2016 23:48:12</ReturnDate>
+      <PointsStrategy>Default</PointsStrategy>
       <Movies>
         <Movie>0</Movie>
       </Movies>
     </Rental>
-    <Rental id="3">
+    <Rental id="4">
       <RentDate>03.11.2016 00:16:57</RentDate>
       <ReturnDate>18.11.2016 00:16:57</ReturnDate>
+      <PointsStrategy>Default</PointsStrategy>
       <Movies>
         <Movie>0</Movie>
         <Movie>2</Movie>
@@ -161,14 +174,15 @@
       <PersonalData>0</PersonalData>
       <Rentnals>
         <Rental>0</Rental>
+        <Rental>1</Rental>
       </Rentnals>
     </Client>
     <Client id="1">
       <Points>16</Points>
       <PersonalData>1</PersonalData>
       <Rentnals>
-        <Rental>1</Rental>
         <Rental>2</Rental>
+        <Rental>3</Rental>
       </Rentnals>
     </Client>
     <Client id="2">
@@ -182,10 +196,10 @@
       <Rentnals />
     </Client>
     <Client id="4">
-      <Points>0</Points>
+      <Points>150</Points>
       <PersonalData>4</PersonalData>
       <Rentnals>
-        <Rental>3</Rental>
+        <Rental>4</Rental>
       </Rentnals>
     </Client>
     <Client id="5">
