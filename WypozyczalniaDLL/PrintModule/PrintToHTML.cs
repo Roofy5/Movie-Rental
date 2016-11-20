@@ -17,23 +17,26 @@ namespace WypozyczalniaDLL
         {
             StringBuilder header = new StringBuilder();
             header.Append("<hr>");
-            header.Append("</br>");
-            header.Append("<b>Wypożyczalnia filmów:</b></br>");
+            header.Append("<b>Wypożyczalnia filmów:</b>");
             return header.ToString();
         }
 
         protected override string PrintPriceOnly(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
-            body.Append("<b>Film\tPrice per day\tSummary price</b></br>");
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>Film</b></td><td><b>Price per day</b></td><td><b>Summary price</b></td></tr>");
 
             foreach (Movie movie in rental.MoviesList)
             {
-                body.Append(String.Format("{0}\t\t{1}\t\t{2}</br>", movie.Name, movie.Price, movie.Price * rentDays));
+                body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", movie.Name, movie.Price, movie.Price * rentDays));
             }
+            body.Append("</table>");
             body.Append("</br><b>Summary:</b></br>");
-            body.Append("<b>No. Movies\tRentDays\tPrice</b></br>");
-            body.Append(String.Format("{0}\t\t{1}\t\t{2}</br>", rental.MoviesList.Count, rentDays, rental.CalculatePrice()));
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>No. Movies</b></td><td><b>RentDays</b></td><td>Price</b></td></tr>");
+            body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", rental.MoviesList.Count, rentDays, rental.CalculatePrice()));
+            body.Append("</table>");
 
             return body.ToString();
         }
@@ -41,15 +44,19 @@ namespace WypozyczalniaDLL
         protected override string PrintPointsOnly(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
-            body.Append("<b>Film\tPoints per day\tSummary points</b></br>");
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>Film</b></td><td><b>Points per day</b></td><td><b>Summary points</b></td></tr>");
 
             foreach (Movie movie in rental.MoviesList)
             {
-                body.Append(String.Format("{0}\t\t{1}\t\t{2}</br>", movie.Name, movie.Points, movie.Points * rentDays));
+                body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", movie.Name, movie.Points, movie.Points * rentDays));
             }
+            body.Append("</table>");
             body.Append("</br><b>Summary:</b></br>");
-            body.Append("<b>No. Movies\tRentDays\tPoints</b></br>");
-            body.Append(String.Format("{0}\t\t{1}\t\t{2}</br>", rental.MoviesList.Count, rentDays, rental.CalculatePoints()));
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>No. Movies</b></td><td><b>RentDays</b></td><td>Points</b></td></tr>");
+            body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", rental.MoviesList.Count, rentDays, rental.CalculatePoints()));
+            body.Append("</table>");
 
             return body.ToString();
         }
@@ -57,15 +64,19 @@ namespace WypozyczalniaDLL
         protected override string PrintAll(Rental rental, string header)
         {
             StringBuilder body = new StringBuilder(header);
-            body.Append("<b>Film\tPoints per day\tPrice per day\tSummary points\tSummary price</b></br>");
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>Film</b></td><td><b>Points per day</b></td><td><b>Price per day</b></td><td><b>Summary points</b></td><td><b>Summary price</b></td></tr>");
 
             foreach (Movie movie in rental.MoviesList)
             {
-                body.Append(String.Format("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}</br>", movie.Name, movie.Points, movie.Price, movie.Points * rentDays, movie.Price * rentDays));
+                body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td></tr>", movie.Name, movie.Points, movie.Price, movie.Points * rentDays, movie.Price * rentDays));
             }
+            body.Append("</table>");
             body.Append("</br><b>Summary:</b></br>");
-            body.Append("<b>No. Movies\tRentDays\tPoints\tPrice</b></br>");
-            body.Append(String.Format("{0}\t\t{1}\t\t{2}\t\t{3}</br>", rental.MoviesList.Count, rentDays, rental.CalculatePoints(), rental.CalculatePrice()));
+            body.Append("<table border=solid>");
+            body.Append("<tr><td><b>No. Movies</b></td><td><b>RentDays</b></td><td><b>Points</b></td><td><b>Price</b></td></tr>");
+            body.Append(String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>", rental.MoviesList.Count, rentDays, rental.CalculatePoints(), rental.CalculatePrice()));
+            body.Append("</table>");
 
             return body.ToString();
         }
